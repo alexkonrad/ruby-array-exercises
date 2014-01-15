@@ -13,8 +13,8 @@ class Array
   def two_sum
     [].tap do |arr|
       (0...self.size).each do |i|
-        (i...self.size).each do |j|
-          arr << [i, j] if self[i] == -self[j] 
+        (i+1...self.size).each do |j|
+          arr << [i, j] if self[i] == -self[j]
         end
       end
     end
@@ -22,5 +22,9 @@ class Array
 
   def my_transpose
     (0...self.size).map { |i| (0...self.size).map { |j| self[j][i] } }
+  end
+
+  def my_each(&blk)
+    (self.size).times { |i| blk.call(self[i]) }
   end
 end
