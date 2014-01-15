@@ -2,7 +2,7 @@ require 'rspec'
 require 'array_exercises'
 
 describe Array do
-  let(:array)           { [1, 3, 3, -3, 2, -1, 5, -2, 0] }
+  subject(:array) { [1, 3, 3, -3, 2, -1, 5, -2, 0] }
 
   describe "#my_uniq" do
     let(:array_uniq) { array.uniq }
